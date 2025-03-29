@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hikaye Sıralı Cümleler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="message"></div> <!-- Mesajlar buraya eklenecek -->
+
+  <script>
+    // Sırasıyla gösterilecek cümleler
+    const sentences = [
+      "Bir zamanlar, uzak bir köyde bir çocuk yaşarmış.",
+      "Çocuk, her gün ormanda koşmayı çok severmiş.",
+      "Bir gün, ormanda çok eski bir harita bulmuş.",
+      "Harita, büyük bir hazineye götürebilecek bir yol gösteriyormuş.",
+      "Çocuk, haritayı takip etmeye karar vermiş ve macera başlamış."
+    ];
+
+    let index = 0;
+
+    function showSentence() {
+      // Mesajı ekrana yazdırır
+      document.getElementById("message").innerHTML = sentences[index];
+
+      // Cümle sırasını bir artırır
+      index++;
+
+      // Eğer cümleler bitti ise tekrar başa döner
+      if (index >= sentences.length) {
+        index = 0;
+      }
+    }
+
+    // İlk cümleyi göster ve her 3 saniyede bir yeni cümle göster
+    showSentence();
+    setInterval(showSentence, 3000); // 3 saniye arayla yeni cümle göster
+  </script>
+
+</body>
+</html>
